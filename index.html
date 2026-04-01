@@ -50,6 +50,26 @@
         max-width: 480px;
       }
 
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .profile-name {
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
       .links {
         display: grid;
         gap: 8px;
@@ -90,6 +110,11 @@
   </head>
   <body>
     <main class="container">
+      <div class="profile">
+        <img class="avatar" src="img/Kai-Horstmann_250210_Businessportraits0357.jpg" alt="Kai Horstmann" />
+        <span class="profile-name">Kai T. Horstmann</span>
+      </div>
+
       <div class="links">
         <a
           class="link"
