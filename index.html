@@ -48,23 +48,23 @@
       .container {
         width: 100%;
         max-width: 860px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 48px;
-        align-items: start;
-      }
-
-      /* Left column */
-      .profile {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 32px;
       }
 
       .profile-header {
         display: flex;
         align-items: center;
         gap: 16px;
+      }
+
+      /* Two-column row: bio + links */
+      .profile {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
       }
 
       .avatar {
@@ -118,7 +118,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 16px;
-        padding: 14px 18px;
+        padding: 10px 14px;
         border: 1px solid var(--line);
         border-radius: 12px;
         color: var(--text);
@@ -167,37 +167,37 @@
       }
 
       @media (max-width: 620px) {
-        .container {
+        .profile {
           grid-template-columns: 1fr;
-          gap: 32px;
+          gap: 24px;
         }
-
-        /* avatar stays small+round on mobile too */
       }
     </style>
   </head>
   <body>
     <main class="container">
 
-      <!-- Left: profile + bio -->
-      <div class="profile">
-        <div class="profile-header">
-          <img class="avatar" src="img/Kai-Horstmann_250210_Businessportraits0357.jpg" alt="Kai Horstmann" />
-          <div>
-            <span class="profile-name">Kai T. Horstmann</span><br>
-            <a class="profile-email" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#97;&#105;&#46;&#104;&#111;&#114;&#115;&#116;&#109;&#97;&#110;&#110;&#64;&#117;&#110;&#105;&#45;&#115;&#105;&#101;&#103;&#101;&#110;&#46;&#100;&#101;">&#107;&#97;&#105;&#46;&#104;&#111;&#114;&#115;&#116;&#109;&#97;&#110;&#110;&#64;&#117;&#110;&#105;&#45;&#115;&#105;&#101;&#103;&#101;&#110;&#46;&#100;&#101;</a>
-          </div>
+      <!-- Header: avatar + name -->
+      <div class="profile-header">
+        <img class="avatar" src="img/Kai-Horstmann_250210_Businessportraits0357.jpg" alt="Kai Horstmann" />
+        <div>
+          <span class="profile-name">Kai T. Horstmann</span><br>
+          <a class="profile-email" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#97;&#105;&#46;&#104;&#111;&#114;&#115;&#116;&#109;&#97;&#110;&#110;&#64;&#117;&#110;&#105;&#45;&#115;&#105;&#101;&#103;&#101;&#110;&#46;&#100;&#101;">&#107;&#97;&#105;&#46;&#104;&#111;&#114;&#115;&#116;&#109;&#97;&#110;&#110;&#64;&#117;&#110;&#105;&#45;&#115;&#105;&#101;&#103;&#101;&#110;&#46;&#100;&#101;</a>
         </div>
-        <p class="bio">
-          Ich arbeite als Professor für Psychologische Diagnostik und Differentielle Psychologie an der Universität Siegen. In meiner Forschung untersuche ich, wie sich Verhalten im täglichen Leben beschreiben, messen und vorhersagen lässt. Darüber hinaus entwickle und validiere ich psychologische Messinstrumente. Ich berate Unternehmen im Einsatz psychologischer Diagnostik sowie der Personal- und Kulturentwicklung. Ich lebe in Berlin und Siegen.
-        </p>
-        <p class="bio bio-en">
-          I work as a professor of Psychological Assessment and Individual Differences at the University of Siegen. My research focuses on how behaviour in everyday life can be described, measured and predicted. I also develop and validate psychological tests. I advise companies on the use of psychological instruments as well as on human resources and cultural development. I live in Berlin and Siegen.
-        </p>
       </div>
 
-      <!-- Right: links -->
-      <div class="links">
+      <!-- Two-column: bio + links -->
+      <div class="profile">
+        <div class="bio-block">
+          <p class="bio">
+            Ich arbeite als Professor für Psychologische Diagnostik und Differentielle Psychologie an der Universität Siegen. In meiner Forschung untersuche ich, wie sich Verhalten im täglichen Leben beschreiben, messen und vorhersagen lässt. Darüber hinaus entwickle und validiere ich psychologische Messinstrumente. Ich berate Unternehmen im Einsatz psychologischer Diagnostik sowie der Personal- und Kulturentwicklung. Ich lebe in Berlin und Siegen.
+          </p>
+          <p class="bio bio-en">
+            I work as a professor of Psychological Assessment and Individual Differences at the University of Siegen. My research focuses on how behaviour in everyday life can be described, measured and predicted. I also develop and validate psychological tests. I advise companies on the use of psychological instruments as well as on human resources and cultural development. I live in Berlin and Siegen.
+          </p>
+        </div>
+
+        <div class="links">
         <a
           class="link"
           href="https://www.uni-siegen.de/department-psychologie/pddp"
@@ -228,7 +228,7 @@
           target="_blank"
           rel="noreferrer"
         >
-          <span class="link-title">Google Scholar</span>
+          <span class="link-title">Publikationen | Google Scholar</span>
           <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -293,6 +293,7 @@
             <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+        </div>
       </div>
 
     </main>
