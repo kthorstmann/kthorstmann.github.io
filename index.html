@@ -40,14 +40,26 @@
         background: var(--bg);
         color: var(--text);
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding: 48px 20px;
+        padding: 0 20px;
+      }
+
+      body::before {
+        content: '';
+        flex: 1;
+        min-height: 32px;
+      }
+
+      body::after {
+        content: '';
+        flex: 1.618;
+        min-height: 48px;
       }
 
       .container {
         width: 100%;
-        max-width: 860px;
+        max-width: 1100px;
         display: flex;
         flex-direction: column;
         gap: 32px;
@@ -59,11 +71,11 @@
         gap: 16px;
       }
 
-      /* Two-column row: bio + links */
+      /* Three-column row: bio | publications | links */
       .profile {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 48px;
+        grid-template-columns: 1.15fr 1.15fr 1fr;
+        gap: 40px;
         align-items: start;
       }
 
@@ -110,7 +122,7 @@
       /* Right column */
       .links {
         display: grid;
-        gap: 8px;
+        gap: 4px;
       }
 
       .link {
@@ -135,8 +147,8 @@
       }
 
       .link-title {
-        font-size: 0.97rem;
-        font-weight: 500;
+        font-size: 0.93rem;
+        font-weight: 400;
         line-height: 1.35;
       }
 
@@ -166,7 +178,66 @@
         color: var(--text);
       }
 
-      @media (max-width: 620px) {
+      .publications {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .pub-heading {
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin: 0;
+      }
+
+      .pub-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .pub-link {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 10px 14px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        color: var(--text);
+        text-decoration: none;
+        background: transparent;
+        transition: background 0.15s ease, border-color 0.15s ease;
+      }
+
+      .pub-link:hover,
+      .pub-link:focus-visible {
+        background: var(--hover-bg);
+        border-color: var(--muted);
+        outline: none;
+      }
+
+      .pub-body {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .pub-title {
+        font-size: 0.97rem;
+        font-weight: 500;
+        line-height: 1.35;
+      }
+
+      .pub-meta {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      @media (max-width: 800px) {
         .profile {
           grid-template-columns: 1fr;
           gap: 24px;
@@ -197,6 +268,41 @@
           </p>
         </div>
 
+        <!-- Publications: middle column -->
+        <section class="publications">
+          <div class="pub-list">
+
+            <a class="pub-link" href="https://doi.org/10.1177/19485506251347722" target="_blank" rel="noreferrer">
+              <div class="pub-body">
+                <span class="pub-title">Gender differences in personality traits and average personality states</span>
+                <span class="pub-meta">Buck, L., Doran, L., Kolodziejczak-Krupp, K., Gander, F., Traut, A. C., Uhlich, M., Grob, A., &amp; Horstmann, K. T. (2025). <em>Social Psychological and Personality Science</em>.</span>
+              </div>
+            </a>
+
+            <a class="pub-link" href="https://doi.org/10.1027/1015-5759/a000908" target="_blank" rel="noreferrer">
+              <div class="pub-body">
+                <span class="pub-title">Translation of the redemption and contamination research form (RCRF)</span>
+                <span class="pub-meta">Wilm, L., Dunlop, W. L., &amp; Horstmann, K. T. (2025). <em>European Journal of Psychological Assessment</em>.</span>
+              </div>
+            </a>
+
+            <a class="pub-link" href="https://doi.org/10.1177/08902070251315190" target="_blank" rel="noreferrer">
+              <div class="pub-body">
+                <span class="pub-title">Do you understand what I experienced? Self- and informant-perception of major life events</span>
+                <span class="pub-meta">Fliedner, K., &amp; Horstmann, K. T. (2025). <em>European Journal of Personality</em>.</span>
+              </div>
+            </a>
+
+            <a class="pub-link" href="https://doi.org/10.1007/978-3-662-64801-8_133-1" target="_blank" rel="noreferrer">
+              <div class="pub-body">
+                <span class="pub-title">Künstliche Intelligenz in der Persönlichkeitsdiagnostik</span>
+                <span class="pub-meta">Horstmann, K. T., &amp; Ziegler, M. (2024). In <em>Psychologische Begutachtung</em>.</span>
+              </div>
+            </a>
+
+          </div>
+        </section>
+
         <div class="links">
         <a
           class="link"
@@ -205,9 +311,6 @@
           rel="noreferrer"
         >
           <span class="link-title">Arbeitsgruppe | Universität Siegen</span>
-          <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </a>
 
         <a
@@ -217,9 +320,6 @@
           rel="noreferrer"
         >
           <span class="link-title">Profil | Universität Siegen</span>
-          <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </a>
 
         <a
@@ -229,9 +329,6 @@
           rel="noreferrer"
         >
           <span class="link-title">Publikationen | Google Scholar</span>
-          <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </a>
 
         <a
@@ -241,9 +338,6 @@
           rel="noreferrer"
         >
           <span class="link-title">GitHub</span>
-          <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </a>
 
         <a
@@ -253,9 +347,6 @@
           rel="noreferrer"
         >
           <span class="link-title">Open Science Framework</span>
-          <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </a>
 
         <a
@@ -265,9 +356,6 @@
           rel="noreferrer"
         >
           <span class="link-title">ORCID</span>
-          <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </a>
 
         <a
@@ -277,9 +365,6 @@
           rel="noreferrer"
         >
           <span class="link-title">ResearcherID</span>
-          <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </a>
 
         <a
@@ -289,9 +374,6 @@
           rel="noreferrer"
         >
           <span class="link-title">LinkedIn</span>
-          <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </a>
         </div>
       </div>
