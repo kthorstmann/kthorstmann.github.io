@@ -123,26 +123,35 @@
       .links {
         display: grid;
         gap: 4px;
+        justify-items: start;
+      }
+
+      .link-group {
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin: 10px 0 2px;
+      }
+
+      .link-group:first-child {
+        margin-top: 0;
       }
 
       .link {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        padding: 10px 14px;
-        border: 1px solid var(--line);
-        border-radius: 12px;
+        gap: 8px;
+        padding: 4px 0 4px 12px;
         color: var(--text);
         text-decoration: none;
-        background: transparent;
-        transition: background 0.15s ease, border-color 0.15s ease;
+        transition: color 0.15s ease;
       }
 
       .link:hover,
       .link:focus-visible {
-        background: var(--hover-bg);
-        border-color: var(--muted);
+        color: var(--muted);
         outline: none;
       }
 
@@ -304,77 +313,37 @@
         </section>
 
         <div class="links">
-        <a
-          class="link"
-          href="https://www.uni-siegen.de/department-psychologie/pddp"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span class="link-title">Arbeitsgruppe | Universität Siegen</span>
-        </a>
 
-        <a
-          class="link"
-          href="https://www.uni-siegen.de/person/kai-horstmann"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span class="link-title">Profil | Universität Siegen</span>
-        </a>
+          <p class="link-group">Universität Siegen</p>
+          <a class="link" href="https://www.uni-siegen.de/department-psychologie/pddp" target="_blank" rel="noreferrer">
+            <span class="link-title">Arbeitsgruppe & Team</span>
+          </a>
+          <a class="link" href="https://www.uni-siegen.de/person/kai-horstmann" target="_blank" rel="noreferrer">
+            <span class="link-title">Profil</span>
+          </a>
+          <a class="link" href="https://www.uni-siegen.de/pddp-alle-meldungen" target="_blank" rel="noreferrer">
+            <span class="link-title">Aktuelles</span>
+          </a>
 
-        <a
-          class="link"
-          href="http://tinyurl.com/kthscholar"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span class="link-title">Publikationen | Google Scholar</span>
-        </a>
+          <p class="link-group">Forschung</p>
+          <a class="link" href="http://tinyurl.com/kthscholar" target="_blank" rel="noreferrer">
+            <span class="link-title">Publikationen</span>
+          </a>
+          <a class="link" href="http://osf.io/nk9xg" target="_blank" rel="noreferrer">
+            <span class="link-title">Open Science Framework</span>
+          </a>
+          <a class="link" href="https://github.com/kthorstmann" target="_blank" rel="noreferrer">
+            <span class="link-title">GitHub</span>
+          </a>
+          <a class="link" href="https://orcid.org/0000-0003-3224-1880" target="_blank" rel="noreferrer">
+            <span class="link-title">ORCID</span>
+          </a>
 
-        <a
-          class="link"
-          href="https://github.com/kthorstmann"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span class="link-title">GitHub</span>
-        </a>
+          <p class="link-group">Unternehmen & Beratung</p>
+          <a class="link" href="https://www.linkedin.com/in/kai-t-horstmann/" target="_blank" rel="noreferrer">
+            <span class="link-title">LinkedIn</span>
+          </a>
 
-        <a
-          class="link"
-          href="http://osf.io/nk9xg"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span class="link-title">Open Science Framework</span>
-        </a>
-
-        <a
-          class="link"
-          href="https://orcid.org/0000-0003-3224-1880"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span class="link-title">ORCID</span>
-        </a>
-
-        <a
-          class="link"
-          href="http://www.researcherid.com/rid/U-5203-2018"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span class="link-title">ResearcherID</span>
-        </a>
-
-        <a
-          class="link"
-          href="https://www.linkedin.com/in/kai-t-horstmann/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span class="link-title">LinkedIn</span>
-        </a>
         </div>
       </div>
 
