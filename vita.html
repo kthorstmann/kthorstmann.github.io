@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vita – Kai T. Horstmann</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7f7f5;
+        --text: #111111;
+        --muted: #6b6b6b;
+        --line: #e0e0dc;
+        --hover-bg: #ffffff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #141414;
+          --text: #ebebeb;
+          --muted: #888888;
+          --line: #2a2a2a;
+          --hover-bg: #1e1e1e;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      body::before {
+        content: '';
+        flex: 1;
+        min-height: 48px;
+      }
+
+      body::after {
+        content: '';
+        flex: 1.618;
+        min-height: 48px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 680px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      /* Header */
+      .page-header {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .back-link {
+        font-size: 0.82rem;
+        color: var(--muted);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 8px;
+      }
+
+      .back-link:hover {
+        color: var(--text);
+      }
+
+      .page-title {
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .page-subtitle {
+        font-size: 0.9rem;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      /* Sections */
+      .section {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .section-heading {
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin: 0 0 10px;
+      }
+
+      /* Timeline entries */
+      .entry {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 12px 20px;
+        padding: 10px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .entry:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .entry-year {
+        font-size: 0.82rem;
+        color: var(--muted);
+        padding-top: 2px;
+        white-space: nowrap;
+      }
+
+      .entry-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .entry-title {
+        font-size: 0.95rem;
+        font-weight: 500;
+        line-height: 1.35;
+      }
+
+      .entry-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      /* Awards */
+      .award {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 12px 20px;
+        padding: 10px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .award:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .award-year {
+        font-size: 0.82rem;
+        color: var(--muted);
+        padding-top: 2px;
+      }
+
+      .award-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .award-title {
+        font-size: 0.95rem;
+        font-weight: 500;
+        line-height: 1.35;
+      }
+
+      .award-sub {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      /* Footer */
+      .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 0.82rem;
+        color: var(--muted);
+        text-align: center;
+        padding: 12px 20px;
+        background: var(--bg);
+      }
+
+      .footer a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: var(--text);
+      }
+
+      @media (max-width: 500px) {
+        .entry,
+        .award {
+          grid-template-columns: 60px 1fr;
+          gap: 8px 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+
+      <div class="page-header">
+        <a class="back-link" href="index.html">← zurück</a>
+        <h1 class="page-title">Vita</h1>
+        <p class="page-subtitle">Prof. Dr. rer. nat. Kai T. Horstmann</p>
+      </div>
+
+      <!-- Academic Positions -->
+      <section class="section">
+        <p class="section-heading">Akademische Positionen</p>
+
+        <div class="entry">
+          <span class="entry-year">2025–heute</span>
+          <div class="entry-body">
+            <span class="entry-title">Universitätsprofessor</span>
+            <span class="entry-sub">Psychologische Diagnostik und Differentielle Psychologie, Universität Siegen</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <span class="entry-year">2022–2025</span>
+          <div class="entry-body">
+            <span class="entry-title">Juniorprofessor</span>
+            <span class="entry-sub">Psychologische Diagnostik und Differentielle Psychologie, Universität Siegen</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <span class="entry-year">2019–2022</span>
+          <div class="entry-body">
+            <span class="entry-title">Juniorprofessor</span>
+            <span class="entry-sub"><em>Psychological Assessment of Person-Situation-Dynamics</em>, Humboldt-Universität zu Berlin</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <span class="entry-year">2018–2019</span>
+          <div class="entry-body">
+            <span class="entry-title">Wissenschaftlicher Mitarbeiter (Post-Doc)</span>
+            <span class="entry-sub">Psychologische Diagnostik, Humboldt-Universität zu Berlin</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <span class="entry-year">2015–2018</span>
+          <div class="entry-body">
+            <span class="entry-title">Promotionsstudent</span>
+            <span class="entry-sub">Humboldt-Universität zu Berlin. Betreut durch Prof. Dr. Matthias Ziegler</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section">
+        <p class="section-heading">Ausbildung</p>
+
+        <div class="entry">
+          <span class="entry-year">2018</span>
+          <div class="entry-body">
+            <span class="entry-title">Dr. rer. nat., Psychologie</span>
+            <span class="entry-sub">Humboldt-Universität zu Berlin</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <span class="entry-year">2015</span>
+          <div class="entry-body">
+            <span class="entry-title">M. Sc. Psychologie</span>
+            <span class="entry-sub">Humboldt-Universität zu Berlin</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <span class="entry-year">2012</span>
+          <div class="entry-body">
+            <span class="entry-title">B. Sc. Psychologie</span>
+            <span class="entry-sub">Georg-August-Universität Göttingen</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Awards -->
+      <section class="section">
+        <p class="section-heading">Auszeichnungen</p>
+
+        <div class="award">
+          <span class="award-year">2025</span>
+          <div class="award-body">
+            <span class="award-title">3. Platz Professor des Jahres</span>
+            <span class="award-sub">Kategorie Naturwissenschaften und Medizin, Unicum-Stiftung</span>
+          </div>
+        </div>
+
+        <div class="award">
+          <span class="award-year">2023</span>
+          <div class="award-body">
+            <span class="award-title">Anne-Anastasi Rising Scholar Award</span>
+            <span class="award-sub">Psychologische Diagnostik, Fachgruppe für Differentielle Psychologie und Persönlichkeitspsychologie der DGPs</span>
+          </div>
+        </div>
+
+        <div class="award">
+          <span class="award-year">2020</span>
+          <div class="award-body">
+            <span class="award-title">EAPA Ph.D. Award</span>
+            <span class="award-sub">Beste Doktorarbeit, European Association for Psychological Assessment</span>
+          </div>
+        </div>
+
+        <div class="award">
+          <span class="award-year">2018</span>
+          <div class="award-body">
+            <span class="award-title">SCHUHFRIED Science Award</span>
+            <span class="award-sub">Für die Publikation <em>Personality in Situations: Going Beyond the OCEAN and Introducing the Situation Five</em>, Psychological Assessment</span>
+          </div>
+        </div>
+
+        <div class="award">
+          <span class="award-year">2017</span>
+          <div class="award-body">
+            <span class="award-title">Pearson Prize</span>
+            <span class="award-sub">Beste Masterarbeit (Psychologische Diagnostik) in der Fachgruppe Differentielle Psychologie und Psychologische Diagnostik</span>
+          </div>
+        </div>
+
+        <div class="award">
+          <span class="award-year">2015</span>
+          <div class="award-body">
+            <span class="award-title">Beste Masterarbeit im Fach Psychologie</span>
+            <span class="award-sub">Humboldt-Universität zu Berlin</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <a href="legal.html">Impressum & Datenschutz</a>
+    </footer>
+  </body>
+</html>
