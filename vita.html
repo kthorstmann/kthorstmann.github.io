@@ -189,17 +189,23 @@
         line-height: 1.5;
       }
 
+      .entry-full {
+        grid-template-columns: 1fr;
+        padding-left: 100px;
+      }
+
+      @media (max-width: 500px) {
+        .entry-full {
+          padding-left: 72px;
+        }
+      }
+
       /* Footer */
       .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
         font-size: 0.82rem;
         color: var(--muted);
         text-align: center;
-        padding: 12px 20px;
-        background: var(--bg);
+        padding: 32px 20px 24px;
       }
 
       .footer a {
@@ -300,6 +306,33 @@
             <span class="entry-title">B. Sc. Psychologie</span>
             <span class="entry-sub">Georg-August-Universität Göttingen</span>
           </div>
+        </div>
+
+      </section>
+
+      <!-- Associate Editor -->
+      <section class="section">
+        <p class="section-heading">Associate Editor</p>
+
+        <div class="entry entry-full">
+          <span class="entry-title">Journal of Personality and Social Psychology</span>
+          <span class="entry-sub">Section Personality Processes and Individual Differences</span>
+        </div>
+
+        <div class="entry entry-full">
+          <span class="entry-title">European Journal of Psychological Assessment</span>
+        </div>
+
+        <div class="entry entry-full">
+          <span class="entry-title">European Journal of Personality</span>
+        </div>
+
+        <div class="entry entry-full">
+          <span class="entry-title">Psychological Test Development and Adaptation</span>
+        </div>
+
+        <div class="entry entry-full">
+          <span class="entry-title">Collabra</span>
         </div>
 
       </section>
